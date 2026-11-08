@@ -1,0 +1,24 @@
+# Codex 专用：只监听本机 7899，只走 IPv4，唯一出口 = 新加坡节点。
+# 填好真实节点后另存为同目录的 config.yaml，不要把真实密码放进本模板分享。
+mixed-port: 7899
+allow-lan: false
+bind-address: 127.0.0.1
+mode: rule
+log-level: warning
+ipv6: false
+external-controller: ''
+tun:
+  enable: false
+# 换成自己实际的出站网卡名称（ipconfig 里看），不要照抄 WLAN。
+interface-name: WLAN
+proxies:
+  - name: Codex-Singapore
+    type: trojan
+    server: YOUR_SERVER
+    port: 443
+    password: YOUR_PASSWORD
+    sni: YOUR_TLS_SERVER_NAME
+    skip-cert-verify: false
+# 唯一出口，不写 DIRECT、不写 GEOIP 分流、不用 fallback 组。
+rules:
+  - MATCH,Codex-Singapore

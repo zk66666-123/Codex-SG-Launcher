@@ -1,0 +1,9 @@
+# 真实节点凭据，永不入库
+config.yaml
+# 运行时日志 / 状态 / mihomo 缓存
+runtime/
+cache.db
+guard-snapshot.json
+__pycache__/
+# 二进制：mihomo 自行下载，其余用 csc 从 tools\*.cs 编译（见 README）
+*.exe
