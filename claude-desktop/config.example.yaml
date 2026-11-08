@@ -1,0 +1,20 @@
+# Copy to config.yaml and supply your own authorized upstream configuration.
+mixed-port: 7898
+allow-lan: false
+bind-address: 127.0.0.1
+mode: rule
+log-level: warning
+ipv6: false
+external-controller: ''
+tun:
+  enable: false
+proxies:
+  - name: authorized-upstream
+    type: trojan
+    server: proxy.example.invalid
+    port: 443
+    password: YOUR_PASSWORD
+    sni: YOUR_TLS_SERVER_NAME
+    skip-cert-verify: false
+rules:
+  - MATCH,authorized-upstream

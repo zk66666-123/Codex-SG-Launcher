@@ -1,0 +1,16 @@
+# User configuration, histories, and build products must remain local.
+config.yaml
+config.yml
+.env
+.env.*
+runtime/
+profile*/
+build/
+*.exe
+*.obj
+*.pdb
+*.log
+*.xml
+*.json
+*.pyc
+__pycache__/
